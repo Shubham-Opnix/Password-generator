@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Password Generator</title>
+    <title>OPNIX - Password Generator</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/jpeg" href="Opnix.jpeg">
+
 </head>
+
 
 <body>
 
@@ -16,55 +19,166 @@
 
         <h1>Password Generator</h1>
 
-        <img src="Opnix.jpeg" alt="OPNIX Logo" class="logo">
 
-        <p>Create a strong and secure password</p>
+        <!-- OPNIX Logo -->
+        <img
+            src="Opnix.jpeg"
+            alt="OPNIX Logo"
+            class="logo"
+        >
 
+
+        <p class="description">
+            Create a strong and secure password
+        </p>
+
+
+        <!-- Generated Password -->
         <div class="password-box">
-            <input type="text" id="password" readonly>
 
-            <button id="copyBtn">Copy</button>
+            <input
+                type="text"
+                id="password"
+                placeholder="Your password will appear here"
+                readonly
+            >
+
+            <button id="copyBtn">
+                Copy
+            </button>
+
         </div>
 
-        <label for="length">Password Length:</label>
 
-        <input type="range" id="length" min="4" max="30" value="16">
+        <!-- Password Length -->
+        <div class="length-header">
 
-        <span id="lengthValue">16</span>
+            <label for="length">
+                Password Length
+            </label>
 
+            <span id="lengthValue">
+                16
+            </span>
+
+        </div>
+
+
+        <input
+            type="range"
+            id="length"
+            min="4"
+            max="30"
+            value="16"
+        >
+
+
+        <!-- Password Options -->
         <div class="options">
 
             <label>
-                <input type="checkbox" id="uppercase" checked>
+                <input
+                    type="checkbox"
+                    id="uppercase"
+                    checked
+                >
                 Uppercase
             </label>
 
+
             <label>
-                <input type="checkbox" id="lowercase" checked>
+                <input
+                    type="checkbox"
+                    id="lowercase"
+                    checked
+                >
                 Lowercase
             </label>
 
+
             <label>
-                <input type="checkbox" id="numbers" checked>
+                <input
+                    type="checkbox"
+                    id="numbers"
+                    checked
+                >
                 Numbers
             </label>
 
+
             <label>
-                <input type="checkbox" id="symbols" checked>
+                <input
+                    type="checkbox"
+                    id="symbols"
+                    checked
+                >
                 Symbols
             </label>
 
         </div>
 
-        <button id="generateBtn">
+
+        <!-- Generate Button -->
+        <button
+            id="generateBtn"
+            class="generate-btn"
+        >
             Generate Password
         </button>
 
+
         <p id="message"></p>
 
+
+        <!-- =================================
+             PASSWORD STRENGTH CHECKER
+             ================================= -->
+
+        <div class="strength-section">
+
+            <h2>Password Strength</h2>
+
+            <p class="strength-description">
+                Type your own password to check its strength.
+            </p>
+
+
+            <!-- User Password -->
+            <input
+                type="password"
+                id="strengthPassword"
+                placeholder="Type your password here"
+            >
+
+
+            <!-- Strength Result -->
+            <div class="strength-result">
+
+                <span id="strengthEmoji">
+                    ⚪
+                </span>
+
+                <span id="strengthText">
+                    Enter a password
+                </span>
+
+            </div>
+
+
+            <!-- Strength Bar -->
+            <div class="strength-bar">
+
+                <div id="strengthFill"></div>
+
+            </div>
+
+        </div>
+
     </div>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
