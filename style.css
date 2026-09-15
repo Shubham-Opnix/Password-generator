@@ -1,24 +1,73 @@
+/* ========================================
+   OPNIX PASSWORD GENERATOR
+   ======================================== */
+
+
+/* ---------- Reset ---------- */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
+/* ---------- Body ---------- */
+
 body {
+
     min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    padding: 20px;
+
     font-family: Arial, sans-serif;
 
-    background: linear-gradient(135deg, #111827, #1e3a8a);
+    background:
+        radial-gradient(
+            circle at top left,
+            #243b6b,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #321d5c,
+            transparent 40%
+        ),
+        #0b1020;
 
     color: white;
 }
 
+
+/* ---------- Main Container ---------- */
+
+.container {
+
+    width: 90%;
+
+    max-width: 520px;
+
+    padding: 30px;
+
+    background: #1f2937;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ---------- Logo ---------- */
+
 .logo {
+
     display: block;
 
     width: 100px;
@@ -28,55 +77,94 @@ body {
 
     border-radius: 50%;
 
-    margin: 0 auto 15px auto;
+    margin: 0 auto 18px auto;
+
+    border: 2px solid #4f7cff;
 }
 
-.container {
-    width: 90%;
-    max-width: 500px;
 
-    padding: 30px;
-
-    background: #1f2937;
-
-    border-radius: 20px;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
+/* ---------- Heading ---------- */
 
 h1 {
+
     text-align: center;
-    margin-bottom: 10px;
+
+    margin-bottom: 18px;
+
+    font-size: 28px;
+
+    letter-spacing: 1px;
 }
 
-.container > p {
+
+/* ---------- Description ---------- */
+
+.description {
+
     text-align: center;
+
     color: #cbd5e1;
+
     margin-bottom: 25px;
+
+    font-size: 14px;
 }
+
+
+/* ========================================
+   PASSWORD DISPLAY
+   ======================================== */
 
 .password-box {
+
     display: flex;
+
     gap: 10px;
-    margin-bottom: 25px;
+
+    margin-bottom: 22px;
 }
 
+
 #password {
+
     flex: 1;
 
-    padding: 12px;
+    min-width: 0;
 
-    border: none;
+    padding: 13px;
+
+    border: 1px solid #374151;
+
     border-radius: 8px;
 
     background: #111827;
+
     color: white;
 
-    font-size: 16px;
+    font-size: 15px;
+
+    outline: none;
 }
 
+
+#password:focus {
+
+    border-color: #4f7cff;
+}
+
+
+#password::placeholder {
+
+    color: #64748b;
+}
+
+
+/* ---------- Buttons ---------- */
+
 button {
+
     border: none;
+
     border-radius: 8px;
 
     padding: 12px 18px;
@@ -84,54 +172,321 @@ button {
     cursor: pointer;
 
     font-weight: bold;
+
+    transition: 0.2s ease;
 }
+
+
+button:hover {
+
+    transform: translateY(-1px);
+}
+
+
+/* ---------- Copy ---------- */
 
 #copyBtn {
+
     background: #38bdf8;
+
+    color: #082f49;
 }
 
-#generateBtn {
-    width: 100%;
 
-    margin-top: 25px;
+#copyBtn:hover {
 
-    background: #22c55e;
-
-    font-size: 16px;
+    background: #67d3fa;
 }
+
+
+/* ========================================
+   LENGTH
+   ======================================== */
+
+.length-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+
+.length-header label {
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+#lengthValue {
+
+    background: #374151;
+
+    padding: 4px 10px;
+
+    border-radius: 6px;
+
+    color: #60a5fa;
+
+    font-weight: bold;
+}
+
 
 #length {
+
     width: 100%;
 
-    margin: 15px 0;
+    margin-bottom: 20px;
+
+    cursor: pointer;
+
+    accent-color: #4f7cff;
 }
 
+
+/* ========================================
+   OPTIONS
+   ======================================== */
+
 .options {
+
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
+
 .options label {
+
     padding: 12px;
 
     background: #374151;
 
     border-radius: 8px;
+
+    color: #dbeafe;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
+
+
+.options label:hover {
+
+    background: #465263;
+}
+
 
 .options input {
+
     margin-right: 8px;
+
+    accent-color: #4f7cff;
 }
 
+
+/* ========================================
+   GENERATE BUTTON
+   ======================================== */
+
+.generate-btn {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    background: #22c55e;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+.generate-btn:hover {
+
+    background: #34d56d;
+}
+
+
+/* ---------- Message ---------- */
+
 #message {
+
     text-align: center;
+
+    min-height: 20px;
+
+    margin-top: 13px;
+
+    color: #86efac;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   PASSWORD STRENGTH
+   ======================================== */
+
+.strength-section {
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #374151;
+}
+
+
+.strength-section h2 {
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
+}
+
+
+.strength-description {
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ---------- Strength Input ---------- */
+
+#strengthPassword {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #374151;
+
+    border-radius: 8px;
+
+    background: #111827;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+#strengthPassword:focus {
+
+    border-color: #4f7cff;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 124, 255, 0.1);
+}
+
+
+#strengthPassword::placeholder {
+
+    color: #64748b;
+}
+
+
+/* ---------- Strength Result ---------- */
+
+.strength-result {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
 
     margin-top: 15px;
 
-    color: #86efac;
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+/* ---------- Strength Bar ---------- */
+
+.strength-bar {
+
+    width: 100%;
+
+    height: 7px;
+
+    margin-top: 10px;
+
+    background: #374151;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+#strengthFill {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 500px) {
+
+    .container {
+
+        padding: 22px;
+
+    }
+
+
+    .options {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .password-box {
+
+        flex-direction: column;
+
+    }
+
+
+    #copyBtn {
+
+        width: 100%;
+
+    }
+
 }
